@@ -80,7 +80,7 @@ function drawText() {
     var fontSize = Math.min(30, window.innerWidth / 24); // Adjust font size based on screen width
     var lineHeight = 8;
 
-    context.font = fontSize + "px Comic Sans MS";
+    context.font = fontSize + "px montserrat";
     context.textAlign = "center";
     
     // glow effect
@@ -91,7 +91,7 @@ function drawText() {
 
     if(frameNumber < 250){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("everyday day I cannot believe how lucky I am", canvas.width/2, canvas.height/2);
+        context.fillText("my lov", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     //fades out the text by decreasing the opacity
