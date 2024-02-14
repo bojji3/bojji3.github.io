@@ -245,3 +245,16 @@ window.addEventListener("resize", function () {
 });
 
 window.requestAnimationFrame(draw);
+
+// Create a shooting star element
+const shootingStar = document.createElement('div');
+shootingStar.classList.add('shooting-star');
+document.body.appendChild(shootingStar);
+
+// Listen for mouse movement
+document.addEventListener('mousemove', (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    shootingStar.style.left = `${x}px`;
+    shootingStar.style.top = `${y}px`;
+});
