@@ -245,3 +245,11 @@ window.addEventListener("resize", function () {
 });
 
 window.requestAnimationFrame(draw);
+
+// Create an audio element
+const audioElement = document.createElement('audio');
+audioElement.src = 'https://soundcloud.com/megumi-acorda/ghost-1'; // SoundCloud link
+audioElement.controls = true; // Show built-in controls (play, pause, volume)
+
+// Append the audio element to the body or any other container
+document.body.appendChild(audioElement);
