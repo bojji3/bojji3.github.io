@@ -91,13 +91,13 @@ function drawText() {
 
     if(frameNumber < 250){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("i have not always known what love is or what it meant;" , canvas.width/2, canvas.height/2);
+        context.fillText("my love, ", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     //fades out the text by decreasing the opacity
     if(frameNumber >= 250 && frameNumber < 500){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("i have not always known what love is or what it meant;", canvas.width/2, canvas.height/2);
+        context.fillText("tmy love", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
 
@@ -237,3 +237,11 @@ function draw() {
     }
     window.requestAnimationFrame(draw);
 }
+
+window.addEventListener("resize", function () {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    baseFrame = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
+});
+
+window.requestAnimationFrame(draw);
