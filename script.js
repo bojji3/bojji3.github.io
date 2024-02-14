@@ -91,13 +91,13 @@ function drawText() {
 
     if(frameNumber < 250){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("i have not always known what love is or what it meant; sweet gestures and kind remarks as we usually know it ", canvas.width/2, canvas.height/2);
+        context.fillText("i have not always known what love is or what it meant; sweet gestures and kind remarks as we usually know it but thousands of sunsets have passed and we come to know that that's not all there is to it and to be able to know a person such as yourself will always be a blessing and a wonder" , canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     //fades out the text by decreasing the opacity
     if(frameNumber >= 250 && frameNumber < 500){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("but thousands of sunsets have passed and we come to know that that's not all there is to it and to be able to know a person such as yourself will always be a blessing and a wonder", canvas.width/2, canvas.height/2);
+        context.fillText("i have not always known what love is or what it meant; sweet gestures and kind remarks as we usually know it but thousands of sunsets have passed and we come to know that that's not all there is to it and to be able to know a person such as yourself will always be a blessing and a wonder", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
 
