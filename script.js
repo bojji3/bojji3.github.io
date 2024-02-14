@@ -1,14 +1,3 @@
-// Create an audio element
-const audioElement = document.createElement('audio');
-audioElement.src = 'https://soundcloud.com/megumi-acorda/ghost-1'; // SoundCloud link
-audioElement.controls = true; // Show built-in controls (play, pause, volume)
-
-// Autoplay the audio when the page loads
-audioElement.autoplay = true;
-
-// Append the audio element to the body or any other container
-document.body.appendChild(audioElement);
-
 var canvas = document.getElementById("starfield");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -257,7 +246,8 @@ window.addEventListener("resize", function () {
 
 window.requestAnimationFrame(draw);
 
-// Create an audio element
+document.addEventListener('DOMContentLoaded', () => {
+    // Your audio element creation code here
 const audioElement = document.createElement('audio');
 audioElement.src = 'https://soundcloud.com/megumi-acorda/ghost-1'; // SoundCloud link
 audioElement.controls = true; // Show built-in controls (play, pause, volume)
@@ -267,4 +257,4 @@ audioElement.autoplay = true;
 
 // Append the audio element to the body or any other container
 document.body.appendChild(audioElement);
-
+});// Create an audio element
