@@ -237,24 +237,3 @@ function draw() {
     }
     window.requestAnimationFrame(draw);
 }
-
-window.addEventListener("resize", function () {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    baseFrame = context.getImageData(0, 0, window.innerWidth, window.innerHeight);
-});
-
-window.requestAnimationFrame(draw);
-
-// Create a shooting star element
-const shootingStar = document.createElement('div');
-shootingStar.classList.add('shooting-star');
-document.body.appendChild(shootingStar);
-
-// Listen for mouse movement
-document.addEventListener('mousemove', (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    shootingStar.style.left = `${x}px`;
-    shootingStar.style.top = `${y}px`;
-});
