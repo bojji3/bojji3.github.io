@@ -1,3 +1,31 @@
+// Create a shooting star
+function createShootingStar() {
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+    document.body.appendChild(star);
+
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
+
+    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
+    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
+
+    star.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
+    star.style.transform = `translate(${endX - startX}px, 0)`;
+    star.style.opacity = '0';
+
+    // Remove the star after animation completes
+    setTimeout(() => {
+        document.body.removeChild(star);
+    }, duration);
+}
+
+// Create a new shooting star every few seconds
+setInterval(createShootingStar, 5000); // Create a star every 5 seconds
+
+
 var audio = new Audio('ghost_sub.mp3');
 audio.play();
 
@@ -248,30 +276,3 @@ window.addEventListener("resize", function () {
 });
 
 window.requestAnimationFrame(draw);
-// Create a shooting star
-function createShootingStar() {
-    const star = document.createElement('div');
-    star.classList.add('shooting-star');
-    document.body.appendChild(star);
-
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    star.style.left = `${startX}px`;
-    star.style.top = `${startY}px`;
-
-    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
-    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
-
-    star.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
-    star.style.transform = `translate(${endX - startX}px, 0)`;
-    star.style.opacity = '0';
-
-    // Remove the star after animation completes
-    setTimeout(() => {
-        document.body.removeChild(star);
-    }, duration);
-}
-
-// Create a new shooting star every few seconds
-setInterval(createShootingStar, 5000); // Create a star every 5 seconds
-
