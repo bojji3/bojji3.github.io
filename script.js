@@ -26,6 +26,7 @@ function createShootingStar() {
 setInterval(createShootingStar, 5000); // Create a star every 5 seconds
 
 
+
 var audio = new Audio('ghost_sub.mp3');
 audio.play();
 
