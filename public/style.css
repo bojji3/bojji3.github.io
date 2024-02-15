@@ -32,3 +32,10 @@ canvas {
     background-color: #1f1faa;
     color: #eee;
 }
+.shooting-star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to bottom right, #f9f9f9, transparent);
+    border-radius: 50%;
+}
