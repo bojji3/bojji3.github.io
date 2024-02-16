@@ -279,6 +279,6 @@ ctx.fill();
 
 // Draw the message
 ctx.font = "16px Arial";
-ctx.fillStyle = "white";
+ctx.fillStyle = "blue";
 ctx.fillText("I love you, LJ", 60, 90);
 
