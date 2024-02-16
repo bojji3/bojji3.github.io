@@ -263,3 +263,22 @@ function createStar() {
 }
 
 setInterval(createStar, 2000); // Add a new star every 2 seconds
+
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// Draw the spaceship (pseudo-3D effect)
+ctx.fillStyle = "blue";
+ctx.beginPath();
+ctx.moveTo(50, 50);
+ctx.lineTo(100, 20);
+ctx.lineTo(150, 50);
+ctx.lineTo(100, 80);
+ctx.closePath();
+ctx.fill();
+
+// Draw the message
+ctx.font = "16px Arial";
+ctx.fillStyle = "white";
+ctx.fillText("I love you, LJ", 60, 90);
+
