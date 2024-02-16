@@ -87,7 +87,7 @@ function drawText() {
     var fontSize = Math.min(30, window.innerWidth / 24); // Adjust font size based on screen width
     var lineHeight = 12;
 
-    context.font = fontSize + "px Arial Bold";
+    context.font = fontSize + "px Arial";
     context.textAlign = "center";
     
     // glow effect
