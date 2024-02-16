@@ -254,38 +254,12 @@ window.addEventListener("resize", function () {
 window.requestAnimationFrame(draw);
 
 // script.js
-function createShootingStar() {
-    const star = document.getElementById('shooting-star');
-
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    star.style.left = `${startX}px`;
-    star.style.top = `${startY}px`;
-
-    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
-    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
-
-    let opacity = 0;
-
-    const moveStar = () => {
-        opacity += 0.01; // Increase opacity gradually
-        star.style.opacity = opacity;
-
-        if (startX < endX) {
-            startX += 1; // Move the star horizontally
-            star.style.left = `${startX}px`;
-            requestAnimationFrame(moveStar);
-        }
-    };
-
-    moveStar();
-
-    // Remove the star after animation completes
-    setTimeout(() => {
-        star.style.display = 'none';
-    }, duration);
+function createStar() {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.top = `${Math.random() * 100}vh`;
+    document.body.appendChild(star);
 }
 
-// Create a new shooting star every few seconds
-setInterval(createShootingStar, 5000); // Create a star every 5 seconds
-
+setInterval(createStar, 2000); // Add a new star every 2 seconds
