@@ -32,23 +32,38 @@ canvas {
     background-color: #1f1faa;
     color: #eee;
 }
-/* styles.css */
-.shooting-star {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: linear-gradient(to bottom right, #f9f9f9, transparent);
-    border-radius: 50%;
-    animation: shootingStar 3s infinite;
+// script.js
+function createShootingStar() {
+    const star = document.getElementById('shooting-star');
+
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
+
+    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
+    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
+
+    let opacity = 0;
+
+    const moveStar = () => {
+        opacity += 0.01; // Increase opacity gradually
+        star.style.opacity = opacity;
+
+        if (startX < endX) {
+            startX += 1; // Move the star horizontally
+            star.style.left = `${startX}px`;
+            requestAnimationFrame(moveStar);
+        }
+    };
+
+    moveStar();
+
+    // Remove the star after animation completes
+    setTimeout(() => {
+        star.style.display = 'none';
+    }, duration);
 }
 
-@keyframes shootingStar {
-    0% {
-        transform: translateX(-100%) translateY(-100%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(100%) translateY(100%);
-        opacity: 1;
-    }
-}
+// Create a new shooting star every few seconds
+setInterval(createShootingStar, 5000); // Create a star every 5 seconds
