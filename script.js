@@ -116,9 +116,9 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {           //shortens long sentence for mobile screens
-            drawTextWithLineBreaks(["i look at myself too often to ask what i did to deserve you; the silliness and beauty"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["i look at myself too often to ask what i did to deserve you;", " the kindness, beauty, and humor"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("i look at myself too often to ask what i did to deserve you; the silliness and beauty", canvas.width/2, canvas.height/2);
+            context.fillText("i look at myself too often to ask what i did to deserve you; the kindness, beauty, and humor", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity + 0.01;
