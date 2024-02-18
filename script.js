@@ -263,5 +263,41 @@ function createStar() {
 }
 
 setInterval(createStar, 2000); // Add a new star every 2 seconds
+// script.js
+const shootingStar = document.querySelector('.shooting-star');
+const star = document.querySelector('.star');
+const cat = document.querySelector('.cat');
+
+// Randomize initial position
+const initialX = Math.random() * window.innerWidth;
+const initialY = Math.random() * window.innerHeight;
+shootingStar.style.left = `${initialX}px`;
+shootingStar.style.top = `${initialY}px`;
+
+// Shooting star animation
+function animateShootingStar() {
+    const finalX = window.innerWidth + 100;
+    const finalY = window.innerHeight + 100;
+
+    star.style.transform = `translate(${finalX}px, ${finalY}px)`;
+    cat.style.transform = `translate(${finalX}px, ${finalY}px)`;
+
+    setTimeout(() => {
+        // Reset position
+        star.style.transform = 'translate(0, 0)';
+        cat.style.transform = 'translate(0, 0)';
+
+        // Randomize new initial position
+        const newX = Math.random() * window.innerWidth;
+        const newY = Math.random() * window.innerHeight;
+        shootingStar.style.left = `${newX}px`;
+        shootingStar.style.top = `${newY}px`;
+
+        // Repeat animation
+        animateShootingStar();
+    }, 3000); // Adjust the duration as desired
+}
+
+animateShootingStar(); // Start the animation
 
 
