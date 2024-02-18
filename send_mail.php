@@ -28,7 +28,7 @@ try {
     $mail->Body    = 'Happy Valentine Day My Love. I love you so much. You are the best thing that has ever happened to me ❤';
 
     $mail->send();
-    echo 'Message has been sent';
+    echo 'have a pleasant day, bub!';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
