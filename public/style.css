@@ -59,45 +59,5 @@ body {
     }
 }
 
-/* styles.css */
-body {
-    margin: 0;
-    overflow: hidden;
-}
-
-.shooting-star {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.star {
-    width: 20px;
-    height: 20px;
-    background-color: #f9e000;
-    border-radius: 50%;
-    position: absolute;
-    animation: shootingStar 3s linear infinite;
-}
-
-.cat {
-    width: 40px;
-    height: 40px;
-    background-image: url('cat.png'); /* Replace with your cat image */
-    background-size: cover;
-    position: absolute;
-    top: -20px;
-    left: 0;
-}
-
-@keyframes shootingStar {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-    100% {
-        transform: translateX(200px) translateY(200px);
-    }
-}
 
 
