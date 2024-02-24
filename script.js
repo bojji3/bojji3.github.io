@@ -1,29 +1,29 @@
-const canvas = document.getElementById('starsCanvas');
-const ctx = canvas.getContext('2d');
+// Create a shooting star
+function createShootingStar() {
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+    document.body.appendChild(star);
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
 
-function createStar() {
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height;
-    const size = Math.random() * 2 + 1;
+    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
+    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
 
-    ctx.fillStyle = 'white';
-    ctx.fillRect(x, y, size, size);
+    star.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
+    star.style.transform = `translate(${endX - startX}px, 0)`;
+    star.style.opacity = '0';
+
+    // Remove the star after animation completes
+    setTimeout(() => {
+        document.body.removeChild(star);
+    }, duration);
 }
 
-function animateStars() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    for (let i = 0; i < 10; i++) {
-        createStar();
-    }
-
-    requestAnimationFrame(animateStars);
-}
-
-animateStars();
+// Create a new shooting star every few seconds
+setInterval(createShootingStar, 5000); // Create a star every 5 seconds
 
 
 
