@@ -1,31 +1,3 @@
-// Create a shooting star
-function createShootingStar() {
-    const star = document.createElement('div');
-    star.classList.add('shooting-star');
-    document.body.appendChild(star);
-
-    const startX = Math.random() * window.innerWidth;
-    const startY = Math.random() * window.innerHeight;
-    star.style.left = `${startX}px`;
-    star.style.top = `${startY}px`;
-
-    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
-    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
-
-    star.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
-    star.style.transform = `translate(${endX - startX}px, 0)`;
-    star.style.opacity = '0';
-
-    // Remove the star after animation completes
-    setTimeout(() => {
-        document.body.removeChild(star);
-    }, duration);
-}
-
-// Create a new shooting star every few seconds
-setInterval(createShootingStar, 5000); // Create a star every 5 seconds
-
-
 
 
 var audio = new Audio('ghost_sub.mp3');
@@ -153,9 +125,9 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
         
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks([""], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["i consider myself lucky, i get to exist with you and i hope that you get to do everything you love"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("amongst trillions and trillions of stars, over billions of years", canvas.width/2, canvas.height/2);
+            context.fillText("i consider myself lucky, i get to exist with you and i hope that you get to do everything you love", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity - 0.01;
@@ -166,12 +138,12 @@ function drawText() {
     }
     if(frameNumber > 1000 && frameNumber < 1250){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("to be alive, and to get to spend this life with you", canvas.width/2, canvas.height/2);
+        context.fillText("it's nice to be human with you, yet it comes with bitter and sweet things", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 1250 && frameNumber < 1500){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("to be alive, and to get to spend this life with you", canvas.width/2, canvas.height/2);
+        context.fillText("it's nice to be human with you, yet it comes with bitter and sweet things", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
 
@@ -180,12 +152,12 @@ function drawText() {
     }
     if(frameNumber > 1500 && frameNumber < 1750){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("is so incredibly, unfathomably unlikely", canvas.width/2, canvas.height/2);
+        context.fillText("i will feel them with you, i will be here, and i will support you", canvas.width/2, canvas.height/2);
         opacity = opacity + 0.01;
     }
     if(frameNumber >= 1750 && frameNumber < 2000){
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
-        context.fillText("is so incredibly, unfathomably unlikely", canvas.width/2, canvas.height/2);
+        context.fillText("i will feel them with you, i will be here, and i will support you", canvas.width/2, canvas.height/2);
         opacity = opacity - 0.01;
     }
 
@@ -196,9 +168,9 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["and yet here I am to get the impossible", "chance to get to know you"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["you have the kindest heart, my love"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("and yet here I am to get the impossible chance to get to know you", canvas.width/2, canvas.height/2);
+            context.fillText("you have the kindest heart, my love", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity + 0.01;
@@ -207,9 +179,9 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["and yet here I am to get the impossible", "chance to get to know you"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["the universe is yet to introduce you more lovely cats and creatures down the road"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("and yet here I am to get the impossible chance to get to know you", canvas.width/2, canvas.height/2);
+            context.fillText("the universe is yet to introduce you more lovely cats and creatures down the road", canvas.width/2, canvas.height/2);
         }
         
         opacity = opacity - 0.01;
@@ -278,6 +250,34 @@ window.addEventListener("resize", function () {
 });
 
 window.requestAnimationFrame(draw);
+
+// Create a shooting star
+function createShootingStar() {
+    const star = document.createElement('div');
+    star.classList.add('shooting-star');
+    document.body.appendChild(star);
+
+    const startX = Math.random() * window.innerWidth;
+    const startY = Math.random() * window.innerHeight;
+    star.style.left = `${startX}px`;
+    star.style.top = `${startY}px`;
+
+    const endX = window.innerWidth + 100; // Add some extra width for off-screen animation
+    const duration = Math.random() * 3000 + 2000; // Random duration between 2 to 5 seconds
+
+    star.style.transition = `transform ${duration}ms linear, opacity ${duration}ms linear`;
+    star.style.transform = `translate(${endX - startX}px, 0)`;
+    star.style.opacity = '0';
+
+    // Remove the star after animation completes
+    setTimeout(() => {
+        document.body.removeChild(star);
+    }, duration);
+}
+
+// Create a new shooting star every few seconds
+setInterval(createShootingStar, 5000); // Create a star every 5 seconds
+
 
 
 
