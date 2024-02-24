@@ -32,12 +32,7 @@ canvas {
     background-color: #1f1faa;
     color: #eee;
 }
-/* Create the shooting star animation */
-body {
-    margin: 0;
-    overflow: hidden;
-    /* Add any other global styles here */
-}
+
 .star {
     position: absolute;
     width: 2px;
