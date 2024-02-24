@@ -1,3 +1,29 @@
+const canvas = document.getElementById('starsCanvas');
+const ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function createStar() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height;
+    const size = Math.random() * 2 + 1;
+
+    ctx.fillStyle = 'white';
+    ctx.fillRect(x, y, size, size);
+}
+
+function animateStars() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = 0; i < 10; i++) {
+        createStar();
+    }
+
+    requestAnimationFrame(animateStars);
+}
+
+animateStars();
 
 
 
