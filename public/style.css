@@ -32,6 +32,7 @@ canvas {
     background-color: #1f1faa;
     color: #eee;
 }
+/* Create the shooting star animation */
 .shooting-star {
     position: absolute;
     width: 2px;
@@ -85,4 +86,3 @@ canvas {
         opacity: 1;
     }
 }
-
